@@ -59,7 +59,7 @@ class Reddit
 botComment = () ->
 	r.list '/r/pics/new/.json?sort=new', (permalinks) ->
 		choice = Math.floor(Math.random() * permalinks.length)
-		r.postComment permalinks[choice], 'supplies!', () ->
+		r.postComment permalinks[choice], '{some comment here}', () ->
 			console.log "@ #{new Date()} - commented on #{permalinks[choice]}"
 			setTimeout botComment, (10 + Math.random() * 8) * 1000 * 60 # schedule
 
